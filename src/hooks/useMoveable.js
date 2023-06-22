@@ -54,7 +54,14 @@ const useMoveable = () => {
         }
       }; 
 
-    return { moveableComponents, selected, setSelected, addMoveable, updateMoveable, handleResizeStart };
+      const deleteMoveable = (id) => {
+        const updatedMoveables = moveableComponents.filter(
+          (moveable) => moveable.id !== id
+        );
+        setMoveableComponents(updatedMoveables);
+      };
+
+    return { moveableComponents, selected, setSelected, addMoveable, updateMoveable, handleResizeStart, deleteMoveable };
 
 }
 

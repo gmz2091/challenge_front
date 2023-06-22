@@ -17,6 +17,7 @@ const useResize = ({ top, left, width, height, color, index, id}) => {
     id,
   });
 
+
   let parent = document.getElementById("parent");
   let parentBounds = parent?.getBoundingClientRect();
   
