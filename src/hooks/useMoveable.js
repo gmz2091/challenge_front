@@ -1,15 +1,14 @@
 import { useState } from "react";
+import getImage from "../services/api";
 
 
 const useMoveable = () => {
     const [moveableComponents, setMoveableComponents] = useState([]);
     const [selected, setSelected] = useState(null);
 
+    const addMoveable = async () => {
+        const image = await getImage(moveableComponents.length + 1);
 
-    const addMoveable = () => {
-        // Create a new moveable component and add it to the array
-        const COLORS = ["red", "blue", "yellow", "green", "purple"];
-    
         setMoveableComponents([
           ...moveableComponents,
           {
@@ -18,7 +17,7 @@ const useMoveable = () => {
             left: 0,
             width: 100,
             height: 100,
-            color: COLORS[Math.floor(Math.random() * COLORS.length)],
+            color: image.url,
             updateEnd: true
           },
         ]);

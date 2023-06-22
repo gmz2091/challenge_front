@@ -34,7 +34,8 @@ const Component = ({
             left: left,
             width: width,
             height: height,
-            background: color,
+            backgroundSize: "cover",
+            backgroundImage: `url(${color})`,
           }}
           onClick={() => setSelected(id)}
         />
