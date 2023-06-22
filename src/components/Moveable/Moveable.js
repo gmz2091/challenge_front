@@ -1,5 +1,5 @@
 import React from 'react'
-import { useResize, useMoveable } from '../../hooks';
+import { useResize } from '../../hooks';
 import Moveable from 'react-moveable';
 
 const Component = ({
