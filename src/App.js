@@ -164,24 +164,6 @@ const Component = ({
     if (positionMaxLeft > parentBounds?.width)
       newWidth = parentBounds?.width - left;
 
-    const { lastEvent } = e;
-    const { drag } = lastEvent;
-    const { beforeTranslate } = drag;
-
-    const absoluteTop = top + beforeTranslate[1];
-    const absoluteLeft = left + beforeTranslate[0];
-
-    updateMoveable(
-      id,
-      {
-        top: absoluteTop,
-        left: absoluteLeft,
-        width: newWidth,
-        height: newHeight,
-        color,
-      },
-      true
-    );
   };
 
   return (
